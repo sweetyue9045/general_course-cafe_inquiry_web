@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>咖啡廳推薦與查詢</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/main.css">
+
+    <link rel="stylesheet" href="https://necolas.github.io/normalize.css/" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.css" />
+
+    <script src="js/jquery-3.4.1.js"></script>
+    <script src="js/popper.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/main.js"></script>
+
+    <script src="https://cdn.jsdelivr.net/momentjs/latest/moment.min.js"></script>
+    <script src="js/daterangepicker.js"></script>
+
+    <script src="https://kit.fontawesome.com/cd8e6a98a4.js" crossorigin="anonymous"></script>
+</head>
+
+<body style="overflow: hidden;">
+    <input type="hidden" name="method" value="write1">
+    <div class="container py-3" id="main">
+        <div class="top d-flex justify-content-start align-items-end" id="top">
+            <div class="site_title btn">咖啡廳</div>
+            <div class="site_title btn ml-3" id="new" style="cursor: pointer;">最新資訊</div>
+            <div class="input-group ml-3" id="input-group">
+                <button type="button" class="btn dropdown-toggle" id="dropdown-toggle">
+                    <i class="fas fa-chevron-down" id="dropdown-toggle" style="display:block"></i>
+                    <i class="fas fa-chevron-up" id="dropdown-toggle" style="display:none"></i>
+                </button>
+                <ul class="dropdown-menu" id="dropdown-menu">
+                    <li><a href="#" onclick="area(this)">全部</a></li>
+                    <li><a href="#" onclick="area(this)">台北</a></li>
+                    <li><a href="#" onclick="area(this)">新北</a></li>
+                    <li><a href="#" onclick="area(this)">台中</a></li>
+                </ul>
+                <input type="text" class="form-control" id="form-control" placeholder="搜尋..." autofocus
+                    autocomplete="off">
+                <style id="c-search"></style>
+                <button type="button" class="btn search" style="outline: none" id="searchitem">
+                    <i class="fas fa-search" style="margin: 2px;"></i>
+                </button>
+            </div>
+        </div>
+        <div class="main_box mt-3">
+            <div id="main01"></div>
+            
+
+        </div>
+    </div>
+    <div class="container pb-3" id="plus">
+        <div class="site_title btn" data-toggle="collapse" data-target="#collapseA1" aria-expanded="false"
+            aria-controls="collapseA1" onclick="over()" style="cursor: pointer">新增咖啡廳分享</div>
+        <div id="collapseA1" class="collapse m-0" aria-labelledby="#a1">
+            <form>
+                <div class="place place">
+                    <input type="text" id="none" required style="display: none;">
+                    <div class="place_">
+                        <div class="input_main">所在</div>
+                        <div class="input">
+                            <select name="area" id="area" required>
+                                <option value="">地區</option>
+                                <option value="northern">北部</option>
+                                <option value="central">中部</option>
+                                <option value="southern">南部</option>
+                                <option value="eastern">東部</option>
+                                <option value="islands">離島</option>
+                            </select>
+                            <select name="county" id="county" required>
+                                <option value="">縣市</option>
+                            </select>
+                        </div>
+
+                        <div class="input_main">名稱</div>
+                        <input type="text" name="title" id="title" class="input" autocomplete="off" required>
+
+                        <div class="input_main">地址</div>
+                        <input type="text" name="address" id="address" class="input" autocomplete="off" required>
+
+                        <div class="input_main">介紹</div>
+                        <textarea name="intro" id="intro" class="input" placeholder='給一點介紹吧!' required></textarea>
+                        </br>
+                        <div class="input_main"></div>
+                        <div class="input_main">圖片</div>
+                        <label class="btn btn-info btn-info0" data-toggle="tooltip" data-placement="bottom"
+                            title="尚未開放">
+                            <input class="input-file" type="file" id="input-file0" name="0" accept="image/*" disabled />
+                            <span id="i0">
+                                <i class="fa fa-image i0"></i><span class="sptext">選擇圖片</span></span>
+                        </label>
+                    </div>
+                    <div class="place_">
+                        <div class="input_main">星期一</div>
+                        <div class="input"><select name="mon" id="time0" required>
+                                <option value="">開放時間</option>
+                                <option value="24小時營業">24小時營業</option>
+                                <option value="公休">公休</option>
+                                <option value="自訂">自訂</option>
+                            </select>　<input type="text" name="datetimes" id="mon" required autocomplete="off">
+                        </div>
+                        <div class="input_main">星期二</div>
+                        <div class="input"><select name="tue" id="time1" required>
+                                <option value="">開放時間</option>
+                                <option value="24小時營業">24小時營業</option>
+                                <option value="公休">公休</option>
+                                <option value="自訂">自訂</option>
+                            </select>　<input type="text" name="datetimes" id="tue" required autocomplete="off">
+                        </div>
+                        <div class="input_main">星期三</div>
+                        <div class="input"><select name="wed" id="time2" required>
+                                <option value="">開放時間</option>
+                                <option value="24小時營業">24小時營業</option>
+                                <option value="公休">公休</option>
+                                <option value="自訂">自訂</option>
+                            </select>　<input type="text" name="datetimes" id="wed" required autocomplete="off">
+                        </div>
+                        <div class="input_main">星期四</div>
+                        <div class="input"><select name="thu" id="time3" required>
+                                <option value="">開放時間</option>
+                                <option value="24小時營業">24小時營業</option>
+                                <option value="公休">公休</option>
+                                <option value="自訂">自訂</option>
+                            </select>　<input type="text" name="datetimes" id="thu" required autocomplete="off"></div>
+                        <div class="input_main">星期五</div>
+                        <div class="input"><select name="fri" id="time4" required>
+                                <option value="">開放時間</option>
+                                <option value="24小時營業">24小時營業</option>
+                                <option value="公休">公休</option>
+                                <option value="自訂">自訂</option>
+                            </select>　<input type="text" name="datetimes" id="fri" required autocomplete="off"></div>
+                        <div class="input_main">星期六</div>
+                        <div class="input"><select name="sat" id="time5" required>
+                                <option value="">開放時間</option>
+                                <option value="24小時營業">24小時營業</option>
+                                <option value="公休">公休</option>
+                                <option value="自訂">自訂</option>
+                            </select>　<input type="text" name="datetimes" id="sat" required autocomplete="off"></div>
+                        <div class="input_main">星期日</div>
+                        <div class="input"><select name="sun" id="time6" required>
+                                <option value="">開放時間</option>
+                                <option value="24小時營業">24小時營業</option>
+                                <option value="公休">公休</option>
+                                <option value="自訂">自訂</option>
+                            </select>　<input type="text" name="datetimes" id="sun" required autocomplete="off"></div>
+                    </div>
+                </div>
+                <div id="showBlock"></div>
+                <div class="btnn">
+                    <button type="button" class="btn" id="del">刪除一個hashtag</button>
+                    <button type="button" class="btn" id="addItem">新增一個hashtag</button>
+                    <button type="submit" class="btn" id="submit">送出</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+</body>
+<template id="template01" style="display: none;">
+    <div class="content_box wrap" data-index="AREA_HERE COUNTY_HERE">
+        <div class="content_title">TITLE_HERE</div>
+        <div class="content_text">
+            <span class="content_key">KEY_HERE</span>
+            <div class="l"><hr></div>
+            地址：<br/>
+            ADD_HERE
+            <div class="l"><hr></div>
+            開放時間：<br />
+            <div class="content_week">
+                <div class="week_title">星期一</div>
+                <div class="week_input">MON_HERE</div>
+                <div class="week_title">星期二</div>
+                <div class="week_input">TUE_HERE</div>
+                <div class="week_title">星期三</div>
+                <div class="week_input">WED_HERE</div>
+                <div class="week_title">星期四</div>
+                <div class="week_input">THU_HERE</div>
+                <div class="week_title">星期五</div>
+                <div class="week_input">FRI_HERE</div>
+                <div class="week_title">星期六</div>
+                <div class="week_input">SAT_HERE</div>
+                <div class="week_title">星期日</div>
+                <div class="week_input">SUN_HERE</div>
+            </div>
+            <div class="l"><hr></div>
+            <div class="content_intro">INTRO_HERE</div>
+        </div>
+    </div>
+</template>
+
+</html>

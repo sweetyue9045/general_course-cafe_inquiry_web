@@ -1,0 +1,448 @@
+\:root
+	--Dark: #679298
+	--Back: #ECF4F7
+	--Font: #264D52
+	--NAV_F: #ECF4F7
+	--UPBA: rgba(255, 255, 255, 0.5)
+*
+	margin: auto
+	padding: 0
+	box-sizing: border-box
+	position: relative
+	\::-webkit-scrollbar
+		width: .5vw
+	\::-webkit-scrollbar-track
+		border-radius: 1.0vw
+	\::-webkit-scrollbar-thumb
+		border-radius: .4vw
+		background: #779ea3
+
+html,body
+	width: 100%
+	height: 100%
+	background-color: #fff
+	font-family: "微軟正黑體"
+
+.site_title
+	border: 0.1vw solid #588288
+	color: #588288
+	margin: 0
+.btn
+	height: 2.6vw
+	padding: 0.4vw 0.9vw
+	line-height: 1.6vw
+	border: 0.1vw solid var(--Dark)
+	font-size: 1.1vw
+.btn:hover
+	color: #588288
+.btn:focus
+	box-shadow: none
+
+
+
+//----------Search CSS----------
+
+.input-group 
+	display: flex
+	align-items: flex-start 
+	border-collapse: separate 
+	width: 0
+	height: 2.6vw
+.form-control 
+	display: none
+	width: 100% 
+	height: 2.6vw 
+	font-size: 1.1vw
+	color: #2c5155
+	background-color: transparent 
+	border: 0.1vw solid var(--Dark)
+	border-left: 0 transparent 
+	border-radius: 0vw
+	transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s 
+	outline: none
+.form-control:focus
+	box-shadow: none
+	border: 0.1vw solid var(--Dark)
+	border-left: 0 transparent 
+.search
+	height: 2.6vw 
+	border: 0.1vw solid var(--Dark)
+	color: #4c777c
+	background-color: var(--Dark)
+	color: #fff 
+	padding: 0.4vw 0.9vw
+	font-size: 1.1vw
+.search:hover
+	color: #fff
+.search:active, .open >.search
+	background-image: none 
+	background-color: #4c777c
+	border-color: #4c777c
+.dropdown-toggle
+	padding: 0.7vw 0.9vw
+	height: 2.6vw 
+	border: 0.1vw solid var(--Dark)
+	color: #4c777c
+	background-color: rgba(0, 0, 0, 0)
+	border-top-right-radius: 0 
+	border-bottom-right-radius: 0 
+	border-right: 0 transparent
+.dropdown-toggle::after
+	display: none
+#dropdown-toggle
+	display: none
+
+.dropdown-menu 
+	position: absolute 
+	z-index: 1000 
+	display: none 
+	min-width: 4.5vw
+	padding: 0.4vw 0 
+	top: 3vw
+	font-size: 1.1vw
+	text-align: left 
+	list-style: none 
+	background-color: #ffffff 
+	background-clip: padding-box 
+	border: 0.1vw solid var(--Dark)
+	border-radius: 0.3vw 
+	box-shadow: 0 .6vw 1.2vw rgba(0,0,0,.175) 
+	a
+		display: block 
+		width: calc( 100% - 0.2vw )
+		text-align: center
+		padding: .3vw .5vw 
+		clear: both 
+		font-weight: 400 
+		color: var(--Dark)
+		white-space: nowrap 
+		text-decoration: none 
+		background-color: transparent 
+	a:hover
+		background-color: #ffffffda 
+
+//渲染
+.main_box
+	height: 34vw
+	overflow-y: auto
+	border: 0.1vw solid var(--Dark)
+	border-radius: .25rem
+	padding: 1.5vw 1.5vw
+#main01
+	display: grid
+	justify-content: start
+	align-content: flex-start
+	grid-template-columns: 24% 24% 24% 24%
+	grid-column-gap: calc( 4% / 3 )
+	grid-row-gap: 1vw
+
+.content_box
+	width: 100%
+	display: inline-block
+	border: 0.1vw solid #92b7bd
+	border-radius: .25rem
+	background-color: #d6e8eb
+	padding: 1vw
+	margin: 0px 0px
+	overflow: hidden
+.content_title
+	color: #000
+	position: relative
+	font-size: 1.2vw
+	font-weight: bolder
+	margin-bottom: 0.5vw
+.content_text
+	line-height: 2vw
+	position: relative
+	font-size: 1.1vw
+	color: #000
+.content_key
+	font-size: 1vw
+.l
+    background-color: var(--Dark)
+    height: .05vw
+    width: 100%
+    margin: 1vw 0
+hr 
+    margin-top: 1rem
+    margin-bottom: 1rem
+    border: 0
+.content_week
+	margin: 0
+	display: grid
+	justify-content: start
+	align-content: flex-start
+	grid-template-columns: 25% 55%
+	grid-template-rows: repeat(7,2vw)
+	grid-column-gap: 0.5vw
+.week_title
+	margin: 0.5vw 0
+	align-self: center
+	font-weight: 500
+.week_input
+	margin: 0.5vw 0
+	align-self: center
+.content_intro
+	line-height: 20px
+	position: relative
+	font-size: 1.1vw
+	color: #000
+
+
+//新增
+#del
+	display: none
+.btn-info 
+	color: #fff
+	background-color: #5bc0de
+	border-color: #46b8da
+	margin-left: 0
+.btn-info:hover 
+	color: #fff
+	background-color: #31b0d5
+	border-color: #269abc
+
+input[type=file]
+	display: none
+
+
+
+
+.sptext
+	font-size: 1.1vw
+	line-height: 1.1vw 
+	margin-left: .4rem
+
+select,input,textarea
+	font-family: "微軟正黑體"
+	outline: none
+	padding: .4vw .6vw
+	border: 0.1vw solid #92b7bd
+	border-radius: .4vw
+	color: #4c777c
+	box-shadow: none
+	background-color: #fff
+	background-image: none
+	font-size: 1.1vw
+	line-height: inherit
+	height: 2.7vw
+
+	
+textarea
+	height: 8vw
+	resize: none
+input[name="datetimes"]
+	display: none
+input[disabled="disabled"]
+	border: 0.1vw solid #b4b4b4
+	color: #747474
+.place
+	padding: 2vw 3vw
+	border: 0.1vw solid #92b7bd
+	border-radius: .25rem
+	background-color: #d6e8eb
+	margin: 1vw auto
+	display: grid
+	justify-content: start
+	align-content: flex-start
+	grid-column-gap: 0.5vw
+	text-align: left
+	grid-template-columns: 50% 50%
+	grid-column-gap: 0vw
+	color: var(--Font)
+	overflow: hidden
+	
+.place_
+	margin: 0
+	display: grid
+	justify-content: start
+	align-content: flex-start
+	grid-template-columns: 20% 60%
+	grid-template-rows: repeat(7,4.5vw)
+	grid-row-gap: 0.8vw
+	grid-column-gap: 0.5vw
+.input_main
+	font-size: 1.3vw
+	margin: 1vw 0
+	align-self: center
+	font-weight: 500
+	
+.input
+	text-align: left
+	flex-direction: start
+	margin: 1vw 0 
+
+.btnn
+	display: -webkit-box
+	-webkit-box-pack: end
+	margin: auto
+.btnn>.btn
+	border: 0.1vw solid #588288
+	color: #588288
+.btnn>.btn:nth-child(2)
+	margin: 0 1.5vw
+.btnn>.btn:not(:last-child)
+	background: #fff
+#submit
+	border: 0.1vw solid #588288
+	color: #fff
+	background-color: #588288
+#submit:hover
+	border: 0.1vw solid #426d72
+	color: #fff
+	background-color: #4c777c
+@media (min-width: 769px)
+	.key
+		margin: 0vw 0.95vw 1vw
+	.key:nth-child(6n)
+		margin-right: 0vw
+	.key:nth-child(6n+1)
+		margin-left: 0vw
+@media (max-width: 768px)
+	.btn
+		font-size: 1.5vw
+		padding: 0.5vw 1vw
+		line-height: 1.9vw
+		height: 3vw
+	select, input
+		height: 3vw
+		font-size: 1.5vw
+	textarea
+		height: 8.5vw
+		font-size: 1.5vw
+	.input
+		margin: 0.5vw 0vw
+	.input_main
+		font-size: 1.5vw
+	.form-control
+		font-size: 1.5vw
+		line-height: 1.9vw
+		height: 3vw
+	.dropdown-menu
+		font-size: 1.5vw
+		line-height: 1.9vw
+		padding: 0.4vw 0.5vw
+		a
+			padding: .5vw .5vw 
+	#main01
+		grid-template-columns: 32.5% 32.5% 32.5%
+		grid-column-gap: calc( 2.5% / 2 )
+		grid-row-gap: 1vw
+	.input-group 
+		height: 3vw
+	.sptext
+		font-size: 1.5vw
+		line-height: 1.9vw
+		margin-left: .4rem
+		top: -1.5px
+	.i0
+		font-size: 2vw
+	.btn-info
+		padding: 0.5vw 1vw
+	.content_title
+		font-size: 1.7vw
+	.content_text,.content_intro
+		font-size: 1.5vw
+	.content_key
+		font-size: 1.3vw
+	.l
+		margin: 2vw 0
+@media (max-width: 768px) and (min-width: 321px)
+	.key
+		margin: 0vw 0.75vw 1vw
+	.key:nth-child(5n)
+		margin-right: 0vw
+	.key:nth-child(5n+1)
+		margin-left: 0vw
+
+@media (max-width: 320px)
+	.btn
+		font-size: 3vw
+		padding: 1.5vw 2.5vw
+		line-height: 3.2vw
+		height: 6.5vw
+	select, input
+		height: 6.5vw
+		font-size: 3vw
+		padding: 0 2vw
+		margin: auto
+	textarea
+		resize: none
+		height: 17vw
+		font-size: 4vw
+		padding: 2vw
+	.input
+		margin: 0vw 0vw
+	.input_main
+		font-size: 3vw
+	.form-control
+		font-size: 3vw
+		line-height: 3.2vw
+		height: 6.5vw
+	.search
+		padding: 1.2vw 2.5vw
+	#main01
+		grid-template-columns: 100%
+		grid-row-gap: 1vw
+	.input-group 
+		height: 6.5vw
+	.place
+		margin: 4vw 0 4vw 0 
+		grid-template-columns: 100%
+	.place_:not(:nth-child(2n))
+		grid-template-rows: repeat(7, 17vw)
+		grid-template-columns: 20% 78%
+		.input_main
+			top: -4vw
+	.place_:nth-child(2n)
+		grid-template-rows: repeat(7, 10vw)
+		grid-template-columns: 20% 78%
+	input[name="datetimes"]
+		top: 1vw
+	#plus > input[type="text"],textarea
+		top: 2vw
+	.sptext
+		font-size: 3vw
+		line-height: 3.2vw 
+		margin-left: .4rem
+	.content_title
+		font-size: 3.2vw
+	.content_text,.content_intro
+		font-size: 3vw
+		line-height: 4vw
+	.content_key
+		font-size: 2.8vw
+	.content_week
+		grid-template-rows: repeat(7,4vw)
+	.l
+		margin: 5vw 0
+	.i0
+		font-size: 4vw
+	.btn-info
+		padding: 1.3vw 2vw
+		top: 0.7vw
+	.key
+		margin: 0vw 0.9vw 1vw
+	.key:nth-child(2n)
+		margin-right: 0vw
+	.key:nth-child(2n+1)
+		margin-left: 0vw
+//----tooltip----//
+.tooltip
+	top: 0px
+.tooltip > .tooltip-inner
+	font-size: 14px
+	padding: 5px 10px
+	font-family: "微軟正黑體"
+	text-align: left
+
+//---card---//
+.card-main 
+    margin: 20px 0 0
+    padding: 0 5px
+    margin-right: 20px
+
+.card-body
+	padding: 8px 17.5px
+.card-content 
+    font-size: 14px
